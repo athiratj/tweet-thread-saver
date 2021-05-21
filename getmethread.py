@@ -1,5 +1,4 @@
 import tweepy
-import json
 import time
 import os
 from dotenv import load_dotenv
@@ -10,6 +9,7 @@ class TwitterStreamListener(tweepy.streaming.StreamListener):
     def on_status(self, status):
         result = ('https://twitter.com/twitter/statuses/' + status.in_reply_to_status_id_str)
         api.send_direct_message(status.user.id, result)
+        api.create_favorite(status.id)
         print("Message send!")
         print(status.text)
         return True
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
     # Connect the stream to our listener
     stream = tweepy.streaming.Stream(auth, listener)
-    x = stream.filter(track=['@getmethread'])
+    stream.filter(track=['@getmethread'])
     
     # Timer
     while True:
