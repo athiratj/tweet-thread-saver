@@ -20,9 +20,7 @@ BFH/reciJV3XlF0HW5cly/2021
   1. The Massage settings in Twitter should be changed before using the bot.
   2. The user has to just tag the bot as a reply to the tweet which the user would like to save for later reference.The bot also favourites the user's tweet.
 
-
-2. Embed video of project demo
-3. 
+**[Product Video](https://www.loom.com/share/de30830732464a328426a664890ea955)**
 ## Libraries used
 Tweepy - 3.10.0
 
